@@ -1,0 +1,21 @@
+<h1>BOOK APP</h1>
+<h4>UPDATE THE BOOK</h4>
+<form #bookUpdateForm="ngForm" (ngSubmit)="onBookUpdateFormSumbit(bookUpdateForm)">
+    <input placeholder="title" type="text" name="title" [(ngModel)]="book.title" required/>
+    <br/><br/>
+    <input placeholder="author" type="text" name="author" [(ngModel)]="book.author" required/>
+    <br/><br/>
+    <input placeholder="price" type="number" name="price"  [(ngModel)]="book.price" required/>
+    <br/><br/>
+    <input placeholder="genre" type="text" name="genre"  [(ngModel)]="book.genre" required>
+    <br/><br/>
+    <input type="date"/>
+    <br/><br/>
+    <input placeholder="pages" type="number" name="pages" [(ngModel)]="book.pages" required/>
+    <br/><br/>
+    <input placeholder="Short description" type="text" name="desc" [(ngModel)]="book.description" required/>
+    <br/><br/>
+    <input placeholder="Coverpage url" type="url" name="curl" [(ngModel)]="book.coverpage" required/>
+    <br/><br/>
+    <button *ngIf="bookUpdateForm.valid" type="submit">UPDATE</button>
+</form>

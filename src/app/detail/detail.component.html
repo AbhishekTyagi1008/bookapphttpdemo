@@ -1,0 +1,16 @@
+<h1>BOOK APP</h1>
+<h2>BOOK DETAILS</h2>
+        <div>
+            <p>{{book.title}}</p>
+            <p>{{book.author}}</p>
+            <p>{{book.date}}</p>
+            <p>{{book.genre}}</p>
+            <p>{{book.description}}</p>
+            <p>{{book.price}}</p>
+            <p>{{book.id}}</p>
+            <p>{{book.pages}}</p>
+            <img src={{book.coverpage}}/>
+            <br/><br/>
+            <button (click)="onBookDeleteButtonClicked()" >DELETE</button>
+            <button [routerLink]="['/update',book.id]" >UPDATE</button>
+        </div>

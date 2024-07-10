@@ -1,0 +1,23 @@
+<h1>BOOK APP</h1>
+
+<ul>
+    <li *ngFor="let book of allBook">
+        <div *ngIf="book.id">
+            <p>{{book.title}}</p>
+            <p>{{book.author}}</p>
+             <button [routerLink]="['/detail',book.id]" >Detail</button>
+        </div>
+    </li>
+</ul>
+ 
+<!--
+    id?:string;
+    title:string;
+    author:string;
+    price:number;
+    genre:string;
+    date:Date;
+    pages:number;
+    description:string;
+    coverpage:string
+-->

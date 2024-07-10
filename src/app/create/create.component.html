@@ -1,0 +1,35 @@
+<h1>BOOK APP</h1>
+<h4>Create A new Book</h4>
+
+<form #bookForm="ngForm" (ngSubmit)="onBookFormSumbit(bookForm)">
+    <input placeholder="title" type="text" name="title" ngModel required/>
+    <br/><br/>
+    <input placeholder="author" type="text" name="author" ngModel required/>
+    <br/><br/>
+    <input placeholder="price" type="number" name="price"  ngModel required/>
+    <br/><br/>
+    <input placeholder="genre" type="text" name="genre"  ngModel required>
+    <br/><br/>
+    <input type="date"/>
+    <br/><br/>
+    <input placeholder="pages" type="number" name="pages" ngModel required/>
+    <br/><br/>
+    <input placeholder="Short description" type="text" name="desc" ngModel required/>
+    <br/><br/>
+    <input placeholder="Coverpage url" type="url" name="curl" ngModel required/>
+    <br/><br/>
+    <button *ngIf="bookForm.valid" type="submit">SUBMIT</button>
+</form>
+
+<!--
+    id?:string;
+    title:string;
+    author:string;
+    price:number;
+    genre:string;
+    date:Date;
+    pages:number;
+    description:string;
+    coverpage:string
+-->
+ 

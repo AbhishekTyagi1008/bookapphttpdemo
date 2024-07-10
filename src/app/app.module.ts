@@ -8,6 +8,7 @@ import { CreateComponent } from './create/create.component';
 import { ShowComponent } from './show/show.component';
 import { DetailComponent } from './detail/detail.component';
 import { UpdateComponent } from './update/update.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { UpdateComponent } from './update/update.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

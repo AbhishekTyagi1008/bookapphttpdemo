@@ -24,15 +24,28 @@ export class UpdateComponent {
   {
       if(this.id!=undefined)
         {
-         this.book= this.bookService.getBookById(this.id);
+          this.bookService.getBookById(this.id).subscribe(
+            {
+              next:responseBook=>{this.book=responseBook;}
+              ,
+              error:err=>{alert(err);}
+            }
+          );
         }
   }
 
   onBookUpdateFormSumbit(bookUpdateForm:NgForm)
   {
-    this.bookService.updateBook(this.book);
-    alert("BOOK UPDATED");
+    this.bookService.updateBook(this.book).subscribe(
+      {
+        next:responseBook=>
+          { alert("BOOK UPDATED");}
+        ,
+        error:err=>{alert(err);}
+      }
+    )
     this.router.navigate(['/detail',this.book.id]);
+
   }
 }
  

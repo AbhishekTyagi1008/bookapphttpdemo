@@ -13,7 +13,14 @@ export class ShowComponent
 
   constructor(private bookService:BookService)
   {
-    this.allBook=bookService.getAllBooks();
+    bookService.getAllBooks().subscribe
+    (
+      {
+        next:responseData=>{this.allBook=responseData;}
+        ,
+        error:err=>{alert("UNABLE TO FETCH DATA");}
+      }
+    );
   }
 
 

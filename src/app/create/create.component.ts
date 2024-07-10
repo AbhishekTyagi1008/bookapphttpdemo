@@ -27,11 +27,17 @@ export class CreateComponent
       coverpage: bookForm.value.curl
     }
 
-    this.bookService.addBook(book);
-    alert("BOOK CREATED");
-    bookForm.reset;
+    
+    this.bookService.addBook(book).subscribe(
+      {
+        next:response=>{alert("BOOK CREATED");}
+        ,
+        error:err=>{alert("Failed to create book try again");}
+      }
+    );
+    bookForm.reset();
 
-
+ 
     
   }
  

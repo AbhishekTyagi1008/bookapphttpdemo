@@ -23,14 +23,27 @@ export class DetailComponent
   {
       if(this.id!=undefined)
         {
-         this.book= this.bookService.getBookById(this.id);
+          this.bookService.getBookById(this.id).subscribe(
+            {
+              next:responseBook=>{this.book=responseBook;}
+              ,
+              error:err=>{alert(err);}
+            }
+          );
         }
   }
 
   onBookDeleteButtonClicked()
   {
-    this.bookService.deleteBookById(this.id);
-    this.router.navigate(['/show']);
+    
+    this.bookService.deleteBookById(this.id).subscribe(
+      {
+        next:response=>{alert("BOOK DELETED");  this.router.navigate(['/show']); }
+        ,
+        error:err=>{alert(err);}
+      }
+    )
+
   }
 
 
